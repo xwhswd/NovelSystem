@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  var _saytext = decodeURI("我真笨");
+
+  var _text;
+
+  var err_list = new Array("别乱填！！","快填，别试了！！");
+
+  _text = prompt("在下面输入框填“" + _saytext +"”");
+
+  for ( i = 0; _text != _saytext; ++i) {
+    if ( i == err_list.length) {
+      i = 0;
+    }
+    alert(err_list[i]);
+    _text = prompt("在下面输入框填“" + _saytext +"”");
+  }
+
+  alert("嗯，这就对了！");
+</script>
+</html>
