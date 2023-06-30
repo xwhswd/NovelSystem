@@ -136,10 +136,10 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public boolean updateBook(Book book) {
-        String sql = "update book set bookname=?,comments=?,state=?,cover=?,is_free=? where id=?";
+        String sql = "update book set bookname=?,comments=?,state=?,cover=?,is_free=?,click=? where id=?";
         try{
             int update = qr.update(sql, book.getBookname(),  book.getComments(),
-                    book.getState(), book.getCover(), book.getIs_free(), book.getId());
+                    book.getState(), book.getCover(), book.getIs_free(), book.getClick(),book.getId());
             return update>0;
         }catch (SQLException e){
             e.printStackTrace();

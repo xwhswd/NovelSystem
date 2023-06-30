@@ -90,10 +90,16 @@ public class BookServlet extends BaseServlet{
         if (bookShelfService.addBookShelf(bookShelf)){
             resultVo.setOk(true);
             resultVo.setMess("添加成功");
+            Book bookById = bookService.getBookById(bookid);
+            bookById.setClick(String.valueOf(Integer.parseInt(bookById.getClick())+1));
+            bookService.updateBook(bookById);
         }else {
             if (bookShelfService.updateBookShelf(bookShelf)){
                 resultVo.setOk(true);
                 resultVo.setMess("更新成功");
+                Book bookById = bookService.getBookById(bookid);
+                bookById.setClick(String.valueOf(Integer.parseInt(bookById.getClick())+1));
+                bookService.updateBook(bookById);
             }else {
                 resultVo.setOk(false);
                 resultVo.setMess("添加失败");
