@@ -34,7 +34,7 @@ public class BookDaoImpl implements BookDao {
                 "b.comments,b.state,b.cover,b.is_free,b.click,b.num " +
                 " from book b left join " +
                 "(select cb.book_id,c.category_name as type " +
-                "from category_book  cb left join category c on cb.category_id=category_id) cbs " +
+                "from category_book  cb left join category c on cb.category_id=c.id) cbs " +
                 "on b.id=cbs.book_id " +
                 "where 1=1";
         try{
