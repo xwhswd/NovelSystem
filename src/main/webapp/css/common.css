@@ -232,6 +232,7 @@ body > header{
 }
 
 .clearfix{
+	width: 100%;
 	content: "";
 	display: inline-block;
 	clear: both;
