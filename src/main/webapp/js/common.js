@@ -155,7 +155,7 @@ function setMask(state="block"){
 
 // 点击搜索按钮
 $('#search-btn').click(function(){
-	window.open("./bookAll.html?search="+$('#search-input').val(),"_self")
+	window.open(`./bookAll.html?search=${encodeURI($('#search-input').val())}`,"_self")
 })
 
 // 更改主样式颜色

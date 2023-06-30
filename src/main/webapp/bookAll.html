@@ -208,7 +208,7 @@
 				let href = location.href.split("?")[1]
 				let harr=href.split("=")
 				if (harr[0]=="search"){
-					msg=harr[1];
+					msg=decodeURI(harr[1]);
 				}else {
 					cid=decodeURI(harr[1]);
 				}
